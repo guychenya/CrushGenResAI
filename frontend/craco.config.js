@@ -12,6 +12,11 @@ module.exports = {
         "path": require.resolve("path-browserify"),
         "util": require.resolve("util/"),
         "url": require.resolve("url/"),
+        "zlib": require.resolve("browserify-zlib"),
+        "https": require.resolve("https-browserify"),
+        "http": require.resolve("stream-http"),
+        "assert": require.resolve("assert/"),
+        "os": require.resolve("os-browserify/browser"),
       };
       webpackConfig.plugins.push(
         new webpack.ProvidePlugin({

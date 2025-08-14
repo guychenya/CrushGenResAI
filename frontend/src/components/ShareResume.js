@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { supabase } from '../supabaseClient';
+import React, { useState, useEffect } from 'react';
 
 const ShareResume = ({ resume }) => {
     const [email, setEmail] = useState('');
@@ -7,10 +6,14 @@ const ShareResume = ({ resume }) => {
     const [message, setMessage] = useState('');
     const [session, setSession] = useState(null);
 
-    useState(() => {
+    useEffect(() => {
         const getSession = async () => {
-            const { data: { session } } = await supabase.auth.getSession();
-            setSession(session);
+          // A better way would be to get session from a global context
+          // For now, we'll assume a token is stored in localStorage
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            setSession({ access_token: token });
+          }
         };
         getSession();
     }, []);

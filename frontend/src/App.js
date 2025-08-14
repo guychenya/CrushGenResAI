@@ -2,26 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
-import { supabase } from './supabaseClient';
 
 function App() {
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      setSession(session);
-      setLoading(false);
+    const fetchUser = async () => {
+      try {
+        const response = await fetch('/api/auth/profile'); // Using relative URL for proxy
+        if (response.ok) {
+          const user = await response.json();
+          setSession({ user }); // Mimic session object structure
+        } else {
+          setSession(null);
+        }
+      } catch (error) {
+        console.error("Failed to fetch user session:", error);
+        setSession(null);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    getSession();
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-
-    return () => subscription.unsubscribe();
+    fetchUser();
   }, []);
 
   if (loading) {

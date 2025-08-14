@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { supabase } from '../supabaseClient';
 import AIAnalyzer from './AIAnalyzer';
 import ShareResume from './ShareResume';
 import Comments from './Comments';
@@ -83,31 +82,32 @@ const ResumeBuilder = ({ resume: initialResume, onSave }) => {
     }
 
     const { title, id, ...content } = resume;
-    let response;
-    if (id) {
-      response = await supabase
-        .from('resumes')
-        .update({ title, content, updated_at: new Date() })
-        .eq('id', id)
-        .eq('user_id', session.user.id)
-        .select();
-    } else {
-      response = await supabase
-        .from('resumes')
-        .insert([{ title, content, user_id: session.user.id }])
-        .select();
-    }
+    const url = id ? `/api/resumes/${id}` : '/api/resumes';
+    const method = id ? 'PUT' : 'POST';
 
-    const { error } = response;
+    try {
+      const response = await fetch(url, {
+        method,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`, // Assuming session management gives us a token
+        },
+        body: JSON.stringify({ title, content }),
+      });
 
-    if (error) {
+      if (response.ok) {
+        alert('Resume saved successfully!');
+        if (onSave) {
+          onSave();
+        }
+      } else {
+        const errorData = await response.json();
+        console.error('Error saving resume:', errorData);
+        alert(`Failed to save resume: ${errorData.message}`);
+      }
+    } catch (error) {
       console.error('Error saving resume:', error);
       alert('Failed to save resume.');
-    } else {
-      alert('Resume saved successfully!');
-      if (onSave) {
-        onSave();
-      }
     }
   };
 

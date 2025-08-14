@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseClient';
 
 const JobTracker = () => {
   const [jobs, setJobs] = useState([]);
@@ -28,15 +27,14 @@ const JobTracker = () => {
   }, [session]);
 
   const getJobs = async () => {
-    const { data, error } = await supabase
-      .from('jobs')
-      .select('*')
-      .order('created_at', { ascending: false });
-
-    if (error) {
+    try {
+      const response = await fetch('/api/jobs');
+      if (response.ok) {
+        const data = await response.json();
+        setJobs(data);
+      }
+    } catch (error) {
       console.error('Error fetching jobs:', error);
-    } else {
-      setJobs(data);
     }
   };
 
@@ -47,18 +45,29 @@ const JobTracker = () => {
       return;
     }
 
-    const { data, error } = await supabase
-      .from('jobs')
-      .insert([newJob])
-      .select();
+    try {
+      const response = await fetch('/api/jobs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify(newJob),
+      });
 
-    if (error) {
+      if (response.ok) {
+        const data = await response.json();
+        setJobs([data, ...jobs]);
+        setNewJob({ title: '', company: '', location: '', url: '' });
+        setShowForm(false);
+      } else {
+        const errorData = await response.json();
+        console.error('Error adding job:', errorData);
+        alert(`Failed to add job: ${errorData.message}`);
+      }
+    } catch (error) {
       console.error('Error adding job:', error);
       alert('Failed to add job.');
-    } else {
-      setJobs([data[0], ...jobs]);
-      setNewJob({ title: '', company: '', location: '', url: '' });
-      setShowForm(false);
     }
   };
 

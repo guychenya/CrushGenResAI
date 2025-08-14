@@ -11,6 +11,7 @@ module.exports = {
         "fs": false,
         "path": require.resolve("path-browserify"),
         "util": require.resolve("util/"),
+        "url": require.resolve("url/"),
       };
       webpackConfig.plugins.push(
         new webpack.ProvidePlugin({

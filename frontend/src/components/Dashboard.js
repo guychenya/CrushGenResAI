@@ -10,34 +10,6 @@ const Dashboard = () => {
   const [sharedResumes, setSharedResumes] = useState([]);
   const [view, setView] = useState('resumes'); // 'resumes' or 'jobs'
 
-  const getResumes = useCallback(async () => {
-    if (!user) return;
-    const { data, error } = await supabase
-      .from('resumes')
-      .select('*')
-      .eq('user_id', user.id);
-
-    if (error) {
-      console.error('Error fetching resumes:', error);
-    } else {
-      setResumes(data);
-    }
-  }, [user]);
-
-  const getSharedResumes = useCallback(async () => {
-    if (!user) return;
-    const { data, error } = await supabase
-      .from('shared_resumes')
-      .select('*, resumes(*, profiles:user_id(*))')
-      .eq('shared_with_user_id', user.id);
-
-    if (error) {
-      console.error('Error fetching shared resumes:', error);
-    } else {
-      setSharedResumes(data);
-    }
-  }, [user]);
-
   useEffect(() => {
     const getSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();
@@ -52,12 +24,40 @@ const Dashboard = () => {
     return () => subscription.unsubscribe();
   }, []);
 
+  const getResumes = useCallback(async () => {
+    if (!user) return;
+    const { data, error } = await supabase
+      .from('resumes')
+      .select('*')
+      .eq('user_id', user.id);
+
+    if (error) {
+      console.error('Error fetching resumes:', error);
+    } else {
+      setResumes(data);
+    }
+  }, [user]);
+  
   useEffect(() => {
     if (user) {
+      const getSharedResumes = async () => {
+        if (!user) return;
+        const { data, error } = await supabase
+          .from('shared_resumes')
+          .select('*, resumes(*, profiles:user_id(*))')
+          .eq('shared_with_user_id', user.id);
+
+        if (error) {
+          console.error('Error fetching shared resumes:', error);
+        } else {
+          setSharedResumes(data);
+        }
+      };
+      
       getResumes();
       getSharedResumes();
     }
-  }, [user, getResumes, getSharedResumes]);
+  }, [user, getResumes]);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();

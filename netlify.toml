@@ -6,7 +6,7 @@
   # This command is run to build the site
   command = "npm run build"
   # The directory to publish, relative to the base directory
-  publish = "frontend/build"
+  publish = "build"
 
 # Redirects rule for single-page applications
 [[redirects]]

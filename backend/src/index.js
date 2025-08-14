@@ -6,6 +6,10 @@ const morgan = require('morgan');
 
 const app = express();
 
+const authRoutes = require('./routes/auth');
+const resumeRoutes = require('./routes/resumes');
+const aiRoutes = require('./routes/ai');
+
 // Middleware
 console.log('Initializing middleware...');
 app.use(cors());
@@ -16,6 +20,11 @@ app.use(express.json());
 console.log('Express JSON middleware initialized.');
 app.use(morgan('dev'));
 console.log('Morgan middleware initialized.');
+
+// API Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/resumes', resumeRoutes);
+app.use('/api/ai', aiRoutes);
 
 // Basic Routes
 app.get('/api/health', (req, res) => {

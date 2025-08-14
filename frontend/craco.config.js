@@ -34,15 +34,7 @@ module.exports = {
           process: 'process/browser',
         })
       );
-      webpackConfig.module.rules.push({
-        test: /react-router\/dist\/development\/.*\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: ['@babel/plugin-transform-modules-commonjs'],
-          },
-        },
-      });
+      webpackConfig.resolve.extensions = ['.js', '.jsx', '.ts', '.tsx'];
       return webpackConfig;
     },
   },

@@ -10,6 +10,7 @@ const authRoutes = require('./routes/auth');
 const resumeRoutes = require('./routes/resumes');
 const aiRoutes = require('./routes/ai');
 const jobRoutes = require('./routes/jobs');
+const shareRoutes = require('./routes/share');
 
 // Middleware
 console.log('Initializing middleware...');
@@ -27,6 +28,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/resumes', resumeRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/jobs', jobRoutes);
+app.use('/api/share', shareRoutes);
+
 
 // Basic Routes
 app.get('/api/health', (req, res) => {

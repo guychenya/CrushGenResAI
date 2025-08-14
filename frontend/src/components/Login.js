@@ -1,13 +1,16 @@
 import React from 'react';
+import { auth } from '../firebase';
+import { signInWithPopup, OAuthProvider } from 'firebase/auth';
 
 const Login = () => {
   const handleLogin = async () => {
-    // In a real app, you would get the redirectTo from the current URL
-    const redirectTo = window.location.origin + '/';
-    const response = await fetch('http://localhost:5000/api/auth/linkedin/initiate?redirectTo=' + encodeURIComponent(redirectTo));
-    const data = await response.json();
-    if (data.url) {
-      window.location.href = data.url;
+    const provider = new OAuthProvider('linkedin.com');
+    try {
+      await signInWithPopup(auth, provider);
+      // On successful login, the onAuthStateChanged listener in App.js will handle the redirect.
+    } catch (error) {
+      console.error("Error during LinkedIn sign-in:", error);
+      alert("Failed to login with LinkedIn.");
     }
   };
 

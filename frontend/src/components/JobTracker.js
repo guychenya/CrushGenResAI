@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useSession } from '../context/SessionContext';
 
 const JobTracker = () => {
+  const { session } = useSession();
   const [jobs, setJobs] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [newJob, setNewJob] = useState({ title: '', company: '', location: '', url: '' });
-  const [session, ] = useState(null);
 
   useEffect(() => {
     const getSession = async () => {

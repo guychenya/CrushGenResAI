@@ -5,8 +5,10 @@ import Comments from './Comments';
 import CompetitorAnalysis from './CompetitorAnalysis';
 import AtsCheck from './AtsCheck';
 import ExportResume from './ExportResume';
+import { useSession } from '../context/SessionContext';
 
 const ResumeBuilder = ({ resume: initialResume, onSave }) => {
+  const { session } = useSession();
   const [resume, setResume] = useState({
     title: 'My Resume',
     contact: { name: '', email: '', phone: '' },
@@ -15,7 +17,6 @@ const ResumeBuilder = ({ resume: initialResume, onSave }) => {
     education: [{ school: '', degree: '', field: '' }],
     skills: [''],
   });
-  const [session, ] = useState(null);
   const ws = useRef(null);
 
   useEffect(() => {

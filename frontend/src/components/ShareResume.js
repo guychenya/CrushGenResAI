@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useSession } from '../context/SessionContext';
 
 const ShareResume = ({ resume }) => {
+    const { session } = useSession();
     const [email, setEmail] = useState('');
     const [permissions, setPermissions] = useState('view');
     const [message, setMessage] = useState('');
-    const [session, setSession] = useState(null);
 
     useEffect(() => {
         const getSession = async () => {

@@ -1,22 +1,26 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { auth } from '../firebase';
 import ResumeBuilder from './ResumeBuilder';
 import JobTracker from './JobTracker';
+import { useSession } from '../context/SessionContext';
 
 const Dashboard = () => {
-  const [user, setUser] = useState(null);
+  const { session } = useSession();
+  const user = session?.user;
   const [resumes, setResumes] = useState([]);
   const [selectedResume, setSelectedResume] = useState(null);
   const [sharedResumes, setSharedResumes] = useState([]);
   const [view, setView] = useState('resumes'); // 'resumes' or 'jobs'
 
-  useEffect(() => {
-    // Session fetching is now handled in App.js
-  }, []);
-
   const getResumes = useCallback(async () => {
     if (!user) return;
     try {
-      const response = await fetch('/api/resumes');
+      const token = await user.getIdToken();
+      const response = await fetch('/api/resumes', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
       if (response.ok) {
         const data = await response.json();
         setResumes(data);
@@ -25,13 +29,18 @@ const Dashboard = () => {
       console.error('Error fetching resumes:', error);
     }
   }, [user]);
-  
+
   useEffect(() => {
     if (user) {
       const getSharedResumes = async () => {
         if (!user) return;
         try {
-          const response = await fetch('/api/share/shared-with-me');
+          const token = await user.getIdToken();
+          const response = await fetch('/api/share/shared-with-me', {
+            headers: {
+              'Authorization': `Bearer ${token}`,
+            },
+          });
           if (response.ok) {
             const data = await response.json();
             setSharedResumes(data);
@@ -40,17 +49,14 @@ const Dashboard = () => {
           console.error('Error fetching shared resumes:', error);
         }
       };
-      
+
       getResumes();
       getSharedResumes();
     }
   }, [user, getResumes]);
 
   const handleLogout = async () => {
-    // TODO: Implement backend logout
-    setUser(null);
-    setResumes([]);
-    setSelectedResume(null);
+    await auth.signOut();
   };
 
   return (

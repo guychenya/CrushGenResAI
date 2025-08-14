@@ -25,6 +25,7 @@ module.exports = {
         "http": require.resolve("stream-browserify"),
         "assert": require.resolve("assert/"),
         "os": require.resolve("os-browserify/browser"),
+        "vm": require.resolve("vm-browserify"),
       };
       webpackConfig.plugins.push(
         new webpack.ProvidePlugin({

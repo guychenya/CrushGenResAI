@@ -59,6 +59,8 @@
     ]
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.11"
+    "@tailwindcss/postcss": "^4.1.11",
+    "encoding": "^0.1.13",
+    "vm-browserify": "^1.1.2"
   }
 }

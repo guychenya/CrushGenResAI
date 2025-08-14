@@ -29,7 +29,7 @@ const Dashboard = () => {
       getResumes();
       getSharedResumes();
     }
-  }, [user]);
+  }, [user, getResumes, getSharedResumes]);
 
   const getSharedResumes = async () => {
     if (!user) return;

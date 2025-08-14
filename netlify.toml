@@ -1,12 +1,12 @@
 # Netlify configuration for Create React App
 
 [build]
+  # The base directory to run the build command from
+  base = "frontend"
   # This command is run to build the site
   command = "npm run build"
   # The directory to publish, relative to the base directory
-  publish = "build"
-  # The base directory to run the build command from
-  base = "frontend"
+  publish = "frontend/build"
 
 # Redirects rule for single-page applications
 [[redirects]]

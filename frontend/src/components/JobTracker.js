@@ -4,7 +4,7 @@ const JobTracker = () => {
   const [jobs, setJobs] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [newJob, setNewJob] = useState({ title: '', company: '', location: '', url: '' });
-  const [session, setSession] = useState(null);
+  const [session, ] = useState(null);
 
   useEffect(() => {
     const getSession = async () => {

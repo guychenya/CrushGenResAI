@@ -15,7 +15,7 @@ const ResumeBuilder = ({ resume: initialResume, onSave }) => {
     education: [{ school: '', degree: '', field: '' }],
     skills: [''],
   });
-  const [session, setSession] = useState(null);
+  const [session, ] = useState(null);
   const ws = useRef(null);
 
   useEffect(() => {

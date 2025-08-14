@@ -24,9 +24,13 @@ const Dashboard = () => {
       if (response.ok) {
         const data = await response.json();
         setResumes(data);
+      } else {
+        console.error('Error fetching resumes:', response.status);
+        alert('Failed to fetch resumes. Please try again later.');
       }
     } catch (error) {
       console.error('Error fetching resumes:', error);
+      alert('Failed to fetch resumes. Please check your network connection and try again.');
     }
   }, [user]);
 
@@ -44,9 +48,13 @@ const Dashboard = () => {
           if (response.ok) {
             const data = await response.json();
             setSharedResumes(data);
+          } else {
+            console.error('Error fetching shared resumes:', response.status);
+            alert('Failed to fetch shared resumes. Please try again later.');
           }
         } catch (error) {
           console.error('Error fetching shared resumes:', error);
+          alert('Failed to fetch shared resumes. Please check your network connection and try again.');
         }
       };
 
@@ -67,18 +75,21 @@ const Dashboard = () => {
           <button
             onClick={() => setView('resumes')}
             className={`px-4 py-2 mr-2 font-bold rounded-md ${view === 'resumes' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+            aria-label="View Resumes"
           >
             Resumes
           </button>
           <button
             onClick={() => setView('jobs')}
             className={`px-4 py-2 font-bold rounded-md ${view === 'jobs' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+            aria-label="View Jobs"
           >
             Jobs
           </button>
           <button
             onClick={handleLogout}
             className="px-4 py-2 ml-4 font-bold text-white bg-red-600 rounded-md hover:bg-red-700"
+            aria-label="Logout"
           >
             Logout
           </button>
@@ -119,13 +130,15 @@ const Dashboard = () => {
             <h2 className="text-xl font-bold">Shared With You</h2>
             <ul>
               {sharedResumes.map((shared) => (
-                <li
-                  key={shared.resumes.id}
-                  onClick={() => setSelectedResume(shared.resumes)}
-                  className="cursor-pointer hover:underline"
-                >
-                  {shared.resumes.title} (shared by {shared.resumes.profiles.full_name})
-                </li>
+                shared.resumes && shared.resumes.profiles ? (
+                  <li
+                    key={shared.resumes.id}
+                    onClick={() => setSelectedResume(shared.resumes)}
+                    className="cursor-pointer hover:underline"
+                  >
+                    {shared.resumes.title} (shared by {shared.resumes.profiles.full_name})
+                  </li>
+                ) : null
               ))}
             </ul>
           </div>

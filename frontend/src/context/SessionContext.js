@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { auth } from './firebase';
+import { auth } from '../firebase.js';
 import { onAuthStateChanged } from 'firebase/auth';
 
 const SessionContext = createContext(null);
@@ -26,7 +26,7 @@ export const SessionProvider = ({ children }) => {
   }, []);
 
   return (
-    <SessionContext.Provider value={{ session, loading }}>
+    <SessionContext.Provider value={{ session, setSession, loading }}>
       {!loading && children}
     </SessionContext.Provider>
   );

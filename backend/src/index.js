@@ -4,6 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const setupWebSocket = require('./websocket');
+const db = require('./db');
 
 const app = express();
 const server = http.createServer(app);
@@ -56,6 +57,7 @@ try {
     server.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
+    db.testConnection();
 } catch (error) {
     console.error('Failed to start server:', error);
 }

@@ -30,11 +30,33 @@ router.get('/linkedin/initiate', async (req, res) => {
     }
 });
 
-// Endpoint for LinkedIn OAuth callback (placeholder)
-router.get('/linkedin/callback', (req, res) => {
-    // In a real application, you would handle the callback from LinkedIn,
-    // exchange the authorization code for an access token, and manage the user session.
-    res.status(200).json({ message: 'LinkedIn callback received. User session would be managed here.' });
+// Endpoint for LinkedIn OAuth callback
+router.get('/linkedin/callback', async (req, res) => {
+    const { code } = req.query;
+
+    if (!code) {
+        return res.status(400).json({ message: 'Authorization code is required' });
+    }
+
+    try {
+        const { data, error } = await supabase.auth.exchangeCodeForSession({
+            provider: 'linkedin',
+            code,
+        });
+
+        if (error) {
+            console.error('Error exchanging code for session:', error);
+            return res.status(500).json({ message: 'Failed to exchange code for session' });
+        }
+
+        const { session } = data;
+
+        // Redirect the user to the frontend with the session token
+        res.redirect(`/?access_token=${session.access_token}&refresh_token=${session.refresh_token}`);
+    } catch (err) {
+        console.error('Unexpected error during LinkedIn OAuth callback:', err);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
 });
 
 // Endpoint to get user profile

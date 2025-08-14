@@ -10,7 +10,13 @@ const Login = () => {
       // On successful login, the onAuthStateChanged listener in App.js will handle the redirect.
     } catch (error) {
       console.error("Error during LinkedIn sign-in:", error);
-      alert("Failed to login with LinkedIn.");
+      let errorMessage = "Failed to login with LinkedIn.";
+      if (error.code === 'auth/popup-closed-by-user') {
+        errorMessage = "The sign-in popup was closed.";
+      } else if (error.code === 'auth/cancelled-popup-request') {
+        errorMessage = "The sign-in request was cancelled.";
+      }
+      alert(errorMessage);
     }
   };
 
@@ -21,6 +27,7 @@ const Login = () => {
         <button
           onClick={handleLogin}
           className="w-full px-4 py-2 font-bold text-white bg-blue-600 rounded-md hover:bg-blue-700"
+          aria-label="Login with LinkedIn"
         >
           Login with LinkedIn
         </button>

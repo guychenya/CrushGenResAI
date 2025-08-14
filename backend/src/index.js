@@ -9,6 +9,7 @@ const app = express();
 const authRoutes = require('./routes/auth');
 const resumeRoutes = require('./routes/resumes');
 const aiRoutes = require('./routes/ai');
+const jobRoutes = require('./routes/jobs');
 
 // Middleware
 console.log('Initializing middleware...');
@@ -25,6 +26,7 @@ console.log('Morgan middleware initialized.');
 app.use('/api/auth', authRoutes);
 app.use('/api/resumes', resumeRoutes);
 app.use('/api/ai', aiRoutes);
+app.use('/api/jobs', jobRoutes);
 
 // Basic Routes
 app.get('/api/health', (req, res) => {

@@ -1,6 +1,12 @@
-const webpack = require('webpack');
-
 module.exports = {
+  style: {
+    postcss: {
+      plugins: [
+        require('@tailwindcss/postcss'),
+        require('autoprefixer'),
+      ],
+    },
+  },
   webpack: {
     configure: (webpackConfig, { env, paths }) => {
       webpackConfig.resolve.fallback = {

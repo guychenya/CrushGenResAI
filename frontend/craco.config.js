@@ -26,12 +26,23 @@ module.exports = {
         "assert": require.resolve("assert/"),
         "os": require.resolve("os-browserify/browser"),
         "vm": require.resolve("vm-browserify"),
+        "process": require.resolve("process/browser")
       };
       webpackConfig.plugins.push(
         new webpack.ProvidePlugin({
           Buffer: ['buffer', 'Buffer'],
+          process: 'process/browser',
         })
       );
+      webpackConfig.module.rules.push({
+        test: /react-router\/dist\/development\/.*\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            plugins: ['@babel/plugin-transform-modules-commonjs'],
+          },
+        },
+      });
       return webpackConfig;
     },
   },

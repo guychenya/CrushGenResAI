@@ -5,15 +5,27 @@ function setupWebSocket(server) {
 
     wss.on('connection', (ws) => {
         console.log('Client connected');
+        ws.resumeId = null; // Initialize resumeId
 
         ws.on('message', (message) => {
-            console.log(`Received message: ${message}`);
-            // Broadcast the message to all clients
-            wss.clients.forEach((client) => {
-                if (client !== ws && client.readyState === WebSocket.OPEN) {
-                    client.send(message);
+            try {
+                const parsedMessage = JSON.parse(message);
+                console.log('Received parsed message:', parsedMessage);
+
+                if (parsedMessage.type === 'subscribe') {
+                    ws.resumeId = parsedMessage.resumeId;
+                    console.log(`Client subscribed to resume: ${ws.resumeId}`);
+                } else {
+                    // Broadcast the message to all clients in the same "room" (resume)
+                    wss.clients.forEach((client) => {
+                        if (client !== ws && client.readyState === WebSocket.OPEN && client.resumeId === parsedMessage.resumeId) {
+                            client.send(JSON.stringify(parsedMessage));
+                        }
+                    });
                 }
-            });
+            } catch (error) {
+                console.error('Failed to parse message or broadcast:', error);
+            }
         });
 
         ws.on('close', () => {

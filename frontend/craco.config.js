@@ -10,6 +10,7 @@ module.exports = {
         "buffer": require.resolve("buffer"),
         "fs": false,
         "path": require.resolve("path-browserify"),
+        "util": require.resolve("util/"),
       };
       webpackConfig.plugins.push(
         new webpack.ProvidePlugin({

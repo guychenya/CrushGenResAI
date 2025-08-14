@@ -1,10 +1,13 @@
-require('dotenv').config();
+const http = require('http');
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const setupWebSocket = require('./websocket');
 
 const app = express();
+const server = http.createServer(app);
+const wss = setupWebSocket(server);
 
 const authRoutes = require('./routes/auth');
 const resumeRoutes = require('./routes/resumes');
@@ -50,7 +53,7 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 try {
-    app.listen(PORT, () => {
+    server.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
 } catch (error) {

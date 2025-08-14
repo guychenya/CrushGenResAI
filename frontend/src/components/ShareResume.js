@@ -17,7 +17,7 @@ const ShareResume = ({ resume }) => {
           }
         };
         getSession();
-    }, []);
+    }, [setSession]);
 
     const handleShare = async () => {
         if (!resume || !email) {

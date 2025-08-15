@@ -1,10 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const { OpenAI } = require('openai');
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Initialize OpenAI client with fallback for development
+let openai = null;
+try {
+  if (process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== 'your-openai-api-key') {
+    const { OpenAI } = require('openai');
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+    console.log('OpenAI client initialized successfully');
+  } else {
+    console.warn('OpenAI API key not configured, using mock responses for development');
+  }
+} catch (error) {
+  console.error('Failed to initialize OpenAI client:', error);
+}
 
 router.post('/analyze', async (req, res) => {
   const { resume, jobDescription } = req.body;
@@ -14,6 +25,29 @@ router.post('/analyze', async (req, res) => {
   }
 
   try {
+    if (!openai) {
+      // Mock response for development
+      return res.json({ 
+        analysis: `**Resume Analysis Score: 75/100**
+
+This resume shows strong alignment with the job description in several key areas. The candidate demonstrates relevant experience and skills that match the position requirements.
+
+**Strengths:**
+- Strong technical background matching the role requirements
+- Relevant work experience in similar positions
+- Good educational foundation
+
+**Areas for Improvement:**
+- Consider adding more specific keywords from the job description
+- Highlight quantifiable achievements
+- Ensure all relevant skills are prominently displayed
+
+**Missing Keywords:** React, Node.js, AWS, Agile, Scrum, Docker, Kubernetes
+
+This is a mock analysis for development purposes. Configure OPENAI_API_KEY for actual AI analysis.`
+      });
+    }
+
     const prompt = `
       Analyze the following resume and job description. Provide a score from 0 to 100 indicating how well the resume is aligned with the job description.
       Also provide a brief summary of a few sentences explaining the score, and a list of keywords from the job description that are missing from the resume.
@@ -62,7 +96,35 @@ router.post('/competitor-analysis', async (req, res) => {
   }
 
   try {
-    const top_resume = getTopPerformingResume(jobDescription); // Using job description to simulate finding a relevant role
+    if (!openai) {
+      // Mock response for development
+      return res.json({ 
+        analysis: `**Competitor Analysis Report**
+
+**Comparison with Top-Performing Resume:**
+
+**Your Strengths:**
+- Good foundational experience in the field
+- Clear presentation of skills and education
+- Professional formatting and structure
+
+**Areas for Improvement:**
+- **Quantify achievements**: Top performers include specific metrics (e.g., "improved system scalability by 40%")
+- **Action-oriented language**: Use strong action verbs to start bullet points
+- **Industry keywords**: Incorporate more technical terms specific to your field
+- **Project highlights**: Add more detailed project descriptions with outcomes
+
+**Recommendations:**
+1. Add quantifiable results to your experience section
+2. Include more technical skills that are in demand
+3. Highlight leadership experience and team collaboration
+4. Consider adding a professional summary at the top
+
+This is a mock analysis for development purposes. Configure OPENAI_API_KEY for actual AI analysis.`
+      });
+    }
+
+    const top_resume = getTopPerformingResume(jobDescription);
 
     const prompt = `
       Analyze the user's resume against the provided top-performing resume for a similar role. Provide a comparative analysis highlighting strengths and weaknesses, and suggest specific improvements for the user's resume to better align with high-performing examples.
@@ -94,6 +156,37 @@ router.post('/ats-check', async (req, res) => {
   }
 
   try {
+    if (!openai) {
+      // Mock response for development
+      return res.json({ 
+        analysis: `**ATS Compatibility Score: 82/100**
+
+**ATS Analysis Results:**
+
+**✅ Strong Points:**
+- Clear section headers (Contact, Summary, Experience, Education)
+- Consistent formatting and structure
+- Readable font and appropriate spacing
+- Standard resume sections are present
+
+**⚠️ Areas for Improvement:**
+- **Keywords**: Add more industry-specific keywords and skills
+- **File format**: Ensure resume is saved as .docx or .pdf for best ATS compatibility
+- **Contact information**: Include LinkedIn profile and city/state
+- **Skills section**: Create a dedicated technical skills section
+- **Action verbs**: Start bullet points with strong action verbs
+
+**Recommendations:**
+1. Add a dedicated "Technical Skills" section
+2. Include more keywords from job descriptions you're targeting
+3. Use standard date formats (MM/YYYY)
+4. Avoid tables, graphics, or unusual formatting
+5. Include relevant certifications if applicable
+
+This is a mock analysis for development purposes. Configure OPENAI_API_KEY for actual AI analysis.`
+      });
+    }
+
     const prompt = `
       Analyze the following resume for ATS (Applicant Tracking System) compatibility. Provide a score from 0 to 100, and a list of actionable recommendations to improve the resume's machine readability.
       Consider formatting, keywords, and standard resume sections.

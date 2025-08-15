@@ -1,0 +1,138 @@
+2025-08-15T14:05:16: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+2025-08-15T14:05:16: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:05:17: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:05:17: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-15T14:05:18: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-08-15T14:05:18: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-15T14:05:18: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:05:18: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:05:19: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2025-08-15T14:05:19: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:05:19: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-15T14:05:19: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:05:20: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:05:20: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-15T14:05:20: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-08-15T14:05:20: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:05:21: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:05:21: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-15T14:05:22: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:05:22: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-08-15T14:05:22: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-15T14:05:22: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:05:23: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:05:23: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-08-15T14:05:23: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:05:23: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-15T14:05:24: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-15T14:05:24: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-15T14:05:24: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-08-15T14:05:24: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:05:25: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:05:25: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:24: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:24: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:06:24: Firebase Admin initialized successfully
+2025-08-15T14:06:25: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:06:25: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:06:25: Firebase Admin initialized successfully
+2025-08-15T14:06:25: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:25: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-08-15T14:06:25: Firebase Admin initialized successfully
+2025-08-15T14:06:26: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:26: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:06:26: Firebase Admin initialized successfully
+2025-08-15T14:06:26: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:26: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-08-15T14:06:26: Firebase Admin initialized successfully
+2025-08-15T14:06:27: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:27: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:06:27: Firebase Admin initialized successfully
+2025-08-15T14:06:27: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:27: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-08-15T14:06:27: Firebase Admin initialized successfully
+2025-08-15T14:06:28: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:06:28: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:28: Firebase Admin initialized successfully
+2025-08-15T14:06:28: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-15T14:06:28: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2025-08-15T14:06:28: Firebase Admin initialized successfully
+2025-08-15T14:06:29: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:06:29: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:06:29: Firebase Admin initialized successfully
+2025-08-15T14:06:29: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:06:29: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-15T14:06:29: Firebase Admin initialized successfully
+2025-08-15T14:06:30: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:30: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-08-15T14:06:30: Firebase Admin initialized successfully
+2025-08-15T14:06:30: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-08-15T14:06:30: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2025-08-15T14:06:30: Firebase Admin initialized successfully
+2025-08-15T14:06:31: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:06:31: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-15T14:06:31: Firebase Admin initialized successfully
+2025-08-15T14:06:31: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-08-15T14:06:31: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:06:31: Firebase Admin initialized successfully
+2025-08-15T14:06:32: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:06:32: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:32: Firebase Admin initialized successfully
+2025-08-15T14:06:43: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-15T14:06:43: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-15T14:06:44: Firebase Admin initialized successfully
+2025-08-15T14:06:44: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:44: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:06:44: Firebase Admin initialized successfully
+2025-08-15T14:06:45: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-15T14:06:45: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 observe env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:45: Firebase Admin initialized successfully
+2025-08-15T14:06:45: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:06:45: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:06:45: Firebase Admin initialized successfully
+2025-08-15T14:06:46: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-08-15T14:06:46: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:06:46: Firebase Admin initialized successfully
+2025-08-15T14:06:46: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2025-08-15T14:06:46: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:06:47: Firebase Admin initialized successfully
+2025-08-15T14:06:47: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-08-15T14:06:47: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:47: Firebase Admin initialized successfully
+2025-08-15T14:06:48: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2025-08-15T14:06:48: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:06:48: Firebase Admin initialized successfully
+2025-08-15T14:06:48: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:06:48: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-15T14:06:48: Firebase Admin initialized successfully
+2025-08-15T14:06:49: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:06:49: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:49: Firebase Admin initialized successfully
+2025-08-15T14:06:49: [dotenv@17.2.1] injecting env (6) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2025-08-15T14:06:49: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:06:49: Firebase Admin initialized successfully
+2025-08-15T14:06:50: [dotenv@17.2.1] injecting env (6) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2025-08-15T14:06:50: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-15T14:06:50: Firebase Admin initialized successfully
+2025-08-15T14:06:51: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:51: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2025-08-15T14:06:51: Firebase Admin initialized successfully
+2025-08-15T14:06:51: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:51: [dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-08-15T14:06:51: Firebase Admin initialized successfully
+2025-08-15T14:06:52: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:52: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2025-08-15T14:06:52: Firebase Admin initialized successfully
+2025-08-15T14:06:52: [dotenv@17.2.1] injecting env (6) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:06:53: [dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-08-15T14:06:53: Firebase Admin initialized successfully
+2025-08-15T14:07:52: [dotenv@17.2.1] injecting env (7) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-08-15T14:07:52: [dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 version env with Radar: https://dotenvx.com/radar
+2025-08-15T14:07:52: Firebase Admin initialized successfully
+2025-08-15T14:07:52: Initializing middleware...
+2025-08-15T14:07:52: CORS middleware initialized.
+2025-08-15T14:07:52: Helmet middleware initialized.
+2025-08-15T14:07:52: Express JSON middleware initialized.
+2025-08-15T14:07:52: Morgan middleware initialized.
+2025-08-15T14:07:52: Server is running on port 5000
+2025-08-15T14:08:03: [0mGET /api/health [32m200[0m 12.594 ms - 54[0m

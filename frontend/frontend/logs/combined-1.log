@@ -1,0 +1,76 @@
+2025-08-15T14:04:50: 
+2025-08-15T14:04:50: > frontend@0.1.0 start
+2025-08-15T14:04:50: > craco start
+2025-08-15T14:04:50: 
+2025-08-15T14:04:55: (node:1050) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+2025-08-15T14:04:55: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-08-15T14:04:55: (node:1050) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+2025-08-15T14:04:56: Starting the development server...
+2025-08-15T14:04:56: 
+2025-08-15T14:05:35: Failed to compile.
+2025-08-15T14:05:35: 
+2025-08-15T14:05:35: Module not found: Error: Can't resolve 'process/browser' in '/home/user/webapp/frontend/node_modules/canvg/lib'
+2025-08-15T14:05:35: Did you mean 'browser.js'?
+2025-08-15T14:05:35: BREAKING CHANGE: The request 'process/browser' failed to resolve only because it was resolved as fully specified
+2025-08-15T14:05:35: (probably because the origin is strict EcmaScript Module, e. g. a module with javascript mimetype, a '*.mjs' file, or a '*.js' file where the package.json contains '"type": "module"').
+2025-08-15T14:05:35: The extension in the request is mandatory for it to be fully specified.
+2025-08-15T14:05:35: Add the extension to the request.
+2025-08-15T14:05:35: ERROR in ./node_modules/canvg/lib/index.es.js 1604:16-23
+2025-08-15T14:05:35: Module not found: Error: Can't resolve 'process/browser' in '/home/user/webapp/frontend/node_modules/canvg/lib'
+2025-08-15T14:05:35: Did you mean 'browser.js'?
+2025-08-15T14:05:35: BREAKING CHANGE: The request 'process/browser' failed to resolve only because it was resolved as fully specified
+2025-08-15T14:05:35: (probably because the origin is strict EcmaScript Module, e. g. a module with javascript mimetype, a '*.mjs' file, or a '*.js' file where the package.json contains '"type": "module"').
+2025-08-15T14:05:35: The extension in the request is mandatory for it to be fully specified.
+2025-08-15T14:05:35: Add the extension to the request.
+2025-08-15T14:05:35: 
+2025-08-15T14:05:35: ERROR in ./node_modules/react-router/dist/development/chunk-HZX6U7MI.mjs 510:13-20
+2025-08-15T14:05:35: Module not found: Error: Can't resolve 'process/browser' in '/home/user/webapp/frontend/node_modules/react-router/dist/development'
+2025-08-15T14:05:35: Did you mean 'browser.js'?
+2025-08-15T14:05:35: BREAKING CHANGE: The request 'process/browser' failed to resolve only because it was resolved as fully specified
+2025-08-15T14:05:35: (probably because the origin is strict EcmaScript Module, e. g. a module with javascript mimetype, a '*.mjs' file, or a '*.js' file where the package.json contains '"type": "module"').
+2025-08-15T14:05:35: The extension in the request is mandatory for it to be fully specified.
+2025-08-15T14:05:35: Add the extension to the request.
+2025-08-15T14:05:35: 
+2025-08-15T14:05:35: ERROR in ./node_modules/canvg/lib/index.es.js
+2025-08-15T14:05:35: Cannot read properties of undefined (reading 'module')
+2025-08-15T14:05:35: 
+2025-08-15T14:05:35: webpack compiled with 3 errors
+2025-08-15T14:05:35: Watchpack Error (initial scan): Error: ENOTDIR: not a directory, scandir '/home/user/webapp/frontend/node_modules/process/browser.js'
+2025-08-15T14:08:15: 
+2025-08-15T14:08:15: > frontend@0.1.0 start
+2025-08-15T14:08:15: > craco start
+2025-08-15T14:08:15: 
+2025-08-15T14:08:19: (node:2040) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+2025-08-15T14:08:19: (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-08-15T14:08:19: (node:2040) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+2025-08-15T14:08:19: Starting the development server...
+2025-08-15T14:08:19: 
+2025-08-15T14:08:31: Failed to compile.
+2025-08-15T14:08:31: 
+2025-08-15T14:08:31: Module not found: Error: Can't resolve 'process/browser' in '/home/user/webapp/frontend/node_modules/canvg/lib'
+2025-08-15T14:08:31: Did you mean 'browser.js'?
+2025-08-15T14:08:31: BREAKING CHANGE: The request 'process/browser' failed to resolve only because it was resolved as fully specified
+2025-08-15T14:08:31: (probably because the origin is strict EcmaScript Module, e. g. a module with javascript mimetype, a '*.mjs' file, or a '*.js' file where the package.json contains '"type": "module"').
+2025-08-15T14:08:31: The extension in the request is mandatory for it to be fully specified.
+2025-08-15T14:08:31: Add the extension to the request.
+2025-08-15T14:08:32: ERROR in ./node_modules/canvg/lib/index.es.js 1604:16-23
+2025-08-15T14:08:32: Module not found: Error: Can't resolve 'process/browser' in '/home/user/webapp/frontend/node_modules/canvg/lib'
+2025-08-15T14:08:32: Did you mean 'browser.js'?
+2025-08-15T14:08:32: BREAKING CHANGE: The request 'process/browser' failed to resolve only because it was resolved as fully specified
+2025-08-15T14:08:32: (probably because the origin is strict EcmaScript Module, e. g. a module with javascript mimetype, a '*.mjs' file, or a '*.js' file where the package.json contains '"type": "module"').
+2025-08-15T14:08:32: The extension in the request is mandatory for it to be fully specified.
+2025-08-15T14:08:32: Add the extension to the request.
+2025-08-15T14:08:32: 
+2025-08-15T14:08:32: ERROR in ./node_modules/react-router/dist/development/chunk-HZX6U7MI.mjs 510:13-20
+2025-08-15T14:08:32: Module not found: Error: Can't resolve 'process/browser' in '/home/user/webapp/frontend/node_modules/react-router/dist/development'
+2025-08-15T14:08:32: Did you mean 'browser.js'?
+2025-08-15T14:08:32: BREAKING CHANGE: The request 'process/browser' failed to resolve only because it was resolved as fully specified
+2025-08-15T14:08:32: (probably because the origin is strict EcmaScript Module, e. g. a module with javascript mimetype, a '*.mjs' file, or a '*.js' file where the package.json contains '"type": "module"').
+2025-08-15T14:08:32: The extension in the request is mandatory for it to be fully specified.
+2025-08-15T14:08:32: Add the extension to the request.
+2025-08-15T14:08:32: 
+2025-08-15T14:08:32: ERROR in ./node_modules/canvg/lib/index.es.js
+2025-08-15T14:08:32: Cannot read properties of undefined (reading 'module')
+2025-08-15T14:08:32: 
+2025-08-15T14:08:32: webpack compiled with 3 errors
+2025-08-15T14:08:32: Watchpack Error (initial scan): Error: ENOTDIR: not a directory, scandir '/home/user/webapp/frontend/node_modules/process/browser.js'

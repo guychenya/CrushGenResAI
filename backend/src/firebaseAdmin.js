@@ -1,20 +1,22 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('./firebase-service-account.json');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
-module.exports = admin;
-
-// Use a hardcoded UID for testing. Replace with a valid UID from your Firebase project.
-const testUid = 'test-uid'; // Replace with a valid user UID for testing
-
-admin.auth().getUser(testUid)
-  .then((userRecord) => {
-    // See the UserRecord reference doc for the contents of userRecord.
-    console.log('Successfully fetched user', userRecord.toJSON());
-  })
-  .catch((error) => {
-    console.log('Error fetching user', error);
-  });
+// Initialize Firebase Admin with default credentials for development
+// In production, use proper service account credentials
+try {
+  if (!admin.apps.length) {
+    admin.initializeApp({
+      credential: admin.credential.applicationDefault()
+    });
+  }
+  console.log('Firebase Admin initialized successfully');
+  module.exports = admin;
+} catch (error) {
+  console.warn('Firebase Admin initialization failed, using mock:', error.message);
+  // Export a mock admin object for development when Firebase isn't available
+  module.exports = {
+    auth: () => ({
+      getUser: () => Promise.reject(new Error('Firebase not configured')),
+      verifyIdToken: () => Promise.reject(new Error('Firebase not configured'))
+    })
+  };
+}
